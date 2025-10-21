@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>TDE 1</title>
+</head>
+<body>
+    <h1>App do TDE 1 ; Calculadora Simples</h1>
+    <script>
+        // Funções de matemática
+        function soma(a, b) {
+            return a + b;
+        }
+        function subtracao(a, b) {
+            return a - b;
+        }
+        function multiplicacao(a, b) {
+            return a * b;
+        }
+        function divisao(a, b) {
+            return b !== 0 ? a / b : 'Erro: divisão por zero';
+        }
+      
+        // const para filtrar o que é par do que não é
+        const filtroPar = (array) => array.filter((num) => num % 2 === 0);
+
+        // const para calcular a média
+        const mediaCal = function(array) {
+            const total = array.reduce((acc, val) => acc + val, 0);
+            return array.length > 0 ? total / array.length : 0;
+        };
+
+        // dobrar os valores
+        const dobrar = array => array.map(num => num * 2);
+
+        // recebe o callback
+        function aplicarOperacao(array, operacao) {
+            return operacao(array);
+        }
+
+        // uso
+        const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // callback
+        console.log("Soma:", soma(10, 5));
+        console.log("Subtração:", subtracao(10, 5));
+        console.log("Multiplicação:", multiplicacao(10, 5));
+        console.log("Divisão:", divisao(10, 5));
+
+        console.log("Números pares:", aplicarOperacao(numeros, filtroPar));
+        console.log("Média:", aplicarOperacao(numeros, mediaCal));
+        console.log("Dobro:", aplicarOperacao(numeros, dobrar));
+    </script>
+</body>
+</html>
